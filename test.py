@@ -51,6 +51,7 @@ class Character:
         #     x.update(Screen)
         # pass
 
+
     # DODAJ ŁACZE MIEDZY OBIEKTAMI
     def addLink(selected_option, i, listOfObjects):
         pass
