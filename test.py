@@ -210,6 +210,7 @@ def instruction():
     menu.add.label(HELP, max_char=-1, font_size=20)
 
 
+
 if __name__ == "__main__":
 
     # os.environ['SDL_VIDEO_CENTERED'] = '1'
