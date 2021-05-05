@@ -204,7 +204,7 @@ def start():
         MyClock.tick(60)
 
 def instruction():
-    HELP = "Aby zbudować nowy obiekt należy użyć prawego przycisku muyszy a następnie wybrać typ obiektu. prawym przyciskiem myszy, " \
+    HELP = "Aby zbudować nowy obiekt należy użyć prawego przycisku myszy a następnie wybrać typ obiektu. Prawym przyciskiem myszy, " \
            "klikniętym na obiekcie można edytować parametru obiektu. Lewy przycisk myszy służy do przemieszczania obiektów"
 
     menu.add.label(HELP, max_char=-1, font_size=20)
@@ -215,8 +215,8 @@ if __name__ == "__main__":
 
     # os.environ['SDL_VIDEO_CENTERED'] = '1'
     pg.init()
-    Screen = pg.display.set_mode((1000, 1000))
-    menu = pygame_menu.Menu('L2TP SYMULATOR',998, 998,
+    Screen = pg.display.set_mode((1200, 1000))
+    menu = pygame_menu.Menu('L2TP SYMULATOR',1198, 998,
                            theme=pygame_menu.themes.THEME_BLUE)
 
     menu.add.button('Rozpocznij symulacje', start)
