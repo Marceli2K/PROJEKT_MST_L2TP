@@ -1,18 +1,14 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-import pygame
-
 import os, sys
 import pygame as pg  # lazy but responsible (avoid namespace flooding)
 from OptionBox import OptionBox as OB
-
-
+import pygame_menu
 
 lista_obiektow = []
 
-class Character:
+import pygame
+
+class Character():
+
     def __init__(self, rect, option):
         characters = 0
         if option == 0:
@@ -59,7 +55,6 @@ class Character:
     #ZMIEN USTAWIENIA OBIEKTU
     def changeSettings(selected_option, i, listOfObjects):
         pass
-
 
 #główna funkcja odpowiadająca za obsługe obiektów, pierwszy if to gdy nie ma żadnego obiektu, natomiast drugi gdy już jakiś obiekt jest na planszy
 def main(Surface, listOfObject):
@@ -197,19 +192,39 @@ def game_event_loop_withoutPlayer() -> object:
             print("X")
             pg.quit();sys.exit()
 
-
-if __name__ == "__main__":
-    os.environ['SDL_VIDEO_CENTERED'] = '1'
-    pg.init()
-    Screen = pg.display.set_mode((777, 777))
-    background_image = pygame.image.load("grafiki/back.jpg").convert()
+def start():
     MyClock = pg.time.Clock()
     run = 1
-    Screen.fill((255, 2, 255))
-    obiekty =[]
+    Screen.fill((255, 255, 255))
+    pg.display.update()
+    obiekty = []
     while run == 1:
         main(Screen, lista_obiektow)
         pg.display.update()
         MyClock.tick(60)
+
+def instruction():
+    HELP = "Aby zbudować nowy obiekt należy użyć prawego przycisku muyszy a następnie wybrać typ obiektu. prawym przyciskiem myszy, " \
+           "klikniętym na obiekcie można edytować parametru obiektu. Lewy przycisk myszy służy do przemieszczania obiektów"
+
+    menu.add.label(HELP, max_char=-1, font_size=20)
+
+
+if __name__ == "__main__":
+
+    # os.environ['SDL_VIDEO_CENTERED'] = '1'
+    pg.init()
+    Screen = pg.display.set_mode((1000, 1000))
+    menu = pygame_menu.Menu('L2TP SYMULATOR',998, 998,
+                           theme=pygame_menu.themes.THEME_BLUE)
+
+    menu.add.button('Rozpocznij symulacje', start)
+    menu.add.button('Instrukcja obsługi', instruction)
+    menu.add.button('Wyjśćie', pygame_menu.events.EXIT)
+    menu.mainloop(Screen)
+
+
+
+
 
 
