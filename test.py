@@ -155,6 +155,7 @@ def moreOption_edit_object(listOfObjects, i):
 
     return MyPlayer
 
+
 def game_event_loop_withPlayer(listOfObjects):
     new_player = 0
     collid = []
