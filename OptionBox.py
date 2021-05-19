@@ -31,6 +31,7 @@ class OptionBox():
             self.rect.x, self.rect.y + self.rect.height, self.rect.width, self.rect.height * len(self.option_list))
             pygame.draw.rect(surf, (0, 0, 0), outer_rect, 2)
 
+
     def update_menu(self, event_list):
         mpos = pygame.mouse.get_pos()
         self.menu_active = self.rect.collidepoint(mpos)
